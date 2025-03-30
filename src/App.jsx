@@ -12,6 +12,7 @@ import Posts from "./pages/Posts";
 import Dashboard from "./pages/Dashboard";
 import Notfound from "./pages/Notfound";
 import Developers from "./pages/Developers";
+import PostDetails from "./pages/PostDetails";
 
 function App() {
   let { darkwhitemode, setDarkwhitemode } = useContext(DarkWhiteMode);
@@ -39,6 +40,14 @@ function App() {
               </ProtectedRoute>
             }
             path="/posts"
+          />
+          <Route
+            element={
+              <ProtectedRoute>
+                <PostDetails />
+              </ProtectedRoute>
+            }
+            path="/posts/:id"
           />
           <Route
             element={
